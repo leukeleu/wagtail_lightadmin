@@ -1,0 +1,15 @@
+/* hide "submit for moderation" in page actions */
+body[class*="model-"] .actions [role="menu"] li:last-child {
+    display: none;
+}
+
+/* LighterRichTextArea */
+/* do not expand when active */
+.object .richtext.expanded {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+.object.full .richtext.expanded {
+  padding-top: 1em;
+  padding-bottom: 5em;
+}
