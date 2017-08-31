@@ -16,7 +16,9 @@ def editor_css():
 def editor_js():
     return format_html(
         """
-            <script src="{0}"></script>
+            <script type="text/javascript" src="{0}"></script>
+            <script type="text/javascript" src="{1}"></script>
         """,
+        static('js/wagtailadmin/admin_link_widget.js'),
         static('js/wagtailadmin/lighter-hallo-bootstrap.js'),
     )
