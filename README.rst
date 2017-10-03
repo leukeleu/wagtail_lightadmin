@@ -37,8 +37,9 @@ Install & setup
 
 Add `wagtail_lightadmin` to your installed apps.
 
-Tell wagtail to use the light rich text widget in your settings_default.py::
+Tell Wagtail to use the light rich text widget in your settings_default.py::
 
+    # For Wagtail < 1.12
     WAGTAILADMIN_RICH_TEXT_EDITORS = {
         # Original setting
         # 'default': {
@@ -46,6 +47,25 @@ Tell wagtail to use the light rich text widget in your settings_default.py::
         # },
         'default': {
             'WIDGET': 'wagtail_lightadmin.rich_text.LighterRichTextArea'
+        },
+    }
+
+    # For Wagtail >= 1.12
+    WAGTAILADMIN_RICH_TEXT_EDITORS = {
+        'default': {
+            'WIDGET': 'wagtail.wagtailadmin.rich_text.HalloRichTextArea',
+            'OPTIONS': {
+                'plugins': {
+                    'halloheadings': {'formatBlocks': ['p', 'h2', 'h3',]},
+                    'halloformat': {},
+                    'hallolists': {},
+                    'hallowagtaillink': {},
+                    'hallorequireparagraphs': {},
+                    'hallowagtailembeds': {},
+                    'hallowagtailimage': {},
+                    'hallowagtaildoclink': {},
+                },
+            }
         },
     }
 
