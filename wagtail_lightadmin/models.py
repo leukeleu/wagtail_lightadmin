@@ -39,7 +39,7 @@ class LinkBlock(blocks.FieldBlock):
         if value:
             # if the value is an Integer, it might come from an old PageChooserField
             # try to get a page from that and fallback gracefully
-            if isinstance( value, ( int, long ) ):
+            if isinstance(value, int):
                 try:
                     page = Page.objects.get(pk=value)
                 except Page.DoesNotExist:
