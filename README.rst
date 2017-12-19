@@ -2,6 +2,13 @@
 Custom admin for wagtail
 ########################
 
+.. image:: http://img.shields.io/pypi/v/wagtail_lightadmin.svg
+   :target: https://pypi.python.org/pypi/wagtail_lightadmin/
+.. image:: http://img.shields.io/badge/license-MIT-blue.svg
+   :target: https://github.com/leukeleu/wagtail_lightadmin/blob/master/LICENSE
+.. image:: http://img.shields.io/travis/leukeleu/wagtail_lightadmin/master.svg
+   :target: https://travis-ci.org/leukeleu/wagtail_lightadmin
+
 Features
 ========
 
