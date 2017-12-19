@@ -4,8 +4,8 @@ import ast
 import json
 import six
 
-from django.db import models
 from django import forms
+from django.db import models
 
 from wagtail.wagtailcore import blocks
 from wagtail.wagtailcore.models import Page
@@ -36,18 +36,17 @@ class LinkBlock(blocks.FieldBlock):
         Reverse of value_from_form; convert a value of this block's native value type
         to one that can be rendered by the form field
         """
-        if value:
+        if value and isinstance(value, int):
             # if the value is an Integer, it might come from an old PageChooserField
             # try to get a page from that and fallback gracefully
-            if isinstance(value, int):
-                try:
-                    page = Page.objects.get(pk=value)
-                except Page.DoesNotExist:
-                    return json.dumps(value)
-                value = dict([
-                    ('url', page.get_url()),
-                    ('title', page.title)
-                ])
+            try:
+                page = Page.objects.get(pk=value)
+            except Page.DoesNotExist:
+                return json.dumps({})
+            value = {
+                'url': page.url or page.url_path,
+                'title': page.title
+            }
             return json.dumps(value)
         return value
 
@@ -93,22 +92,14 @@ class LinkField(models.CharField):
         elif isinstance(value, six.string_types):
             try:
                 return json.loads(value)
-            except:
+            except ValueError:
                 value_dict = ast.literal_eval(value)
                 return {
                     'title': value_dict.get('title'),
                     'url': value_dict.get('url'),
                 }
-
-        # try:
-        #     return json.loads(value)
-        # except TypeError:  # None
-        #     if isinstance(value, dict):
-        #         return value
-        #     else:
-        #         return {}
-        # except ValueError:  # unicode issues?
-        #     return {}
+            except Exception:
+                return {}
 
     def get_prep_value(self, value):
         if value:

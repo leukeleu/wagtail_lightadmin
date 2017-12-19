@@ -1,4 +1,5 @@
 from django import template
+
 from wagtail.wagtailcore.models import Page
 
 register = template.Library()
@@ -10,9 +11,9 @@ def pagechooser_fallback(link):
             page = Page.objects.get(pk=link)
         except Page.DoesNotExist:
             return link
-        link = dict([
-            ('url', page.get_url()),
-            ('title', page.title)
-        ])
+        link = {
+            'url': page.url or page.url_path,
+            'title': page.title
+        }
 
     return link
