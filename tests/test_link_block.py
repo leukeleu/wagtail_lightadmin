@@ -201,7 +201,3 @@ class TestLinkField(TestCase):
         result = field.get_prep_value(value)
         expected_result = ""
         self.assertEqual(result, expected_result)
-
-
-
-

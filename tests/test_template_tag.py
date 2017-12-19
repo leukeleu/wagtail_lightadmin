@@ -46,5 +46,3 @@ class TestPagechooserFallback(TestCase):
         }
         result = pagechooser_fallback(value)
         self.assertEqual(result, expected_result)
-
-

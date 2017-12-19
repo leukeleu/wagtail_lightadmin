@@ -56,7 +56,7 @@ Tell Wagtail to use the light rich text widget in your settings_default.py::
             'WIDGET': 'wagtail.wagtailadmin.rich_text.HalloRichTextArea',
             'OPTIONS': {
                 'plugins': {
-                    'halloheadings': {'formatBlocks': ['p', 'h2', 'h3',]},
+                    'halloheadings': {'formatBlocks': ['p', 'h2', 'h3']},
                     'halloformat': {},
                     'hallolists': {},
                     'hallowagtaillink': {},
