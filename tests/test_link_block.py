@@ -169,7 +169,7 @@ class TestLinkField(TestCase):
 
     def test_to_python_dict(self):
         field = LinkField()
-        value = {'url': '/','title': 'title',}
+        value = {'url': '/', 'title': 'title'}
         result = field.to_python(value)
         expected_result = value
         self.assertEqual(result, expected_result)
@@ -183,14 +183,14 @@ class TestLinkField(TestCase):
 
     def test_to_python_malformed_string(self):
         field = LinkField()
-        value = "{'url': '/','title': 'title',}"
+        value = "{'url': '/', 'title': 'title'}"
         result = field.to_python(value)
-        expected_result = {'url': '/','title': 'title',}
+        expected_result = {'url': '/', 'title': 'title'}
         self.assertEqual(result, expected_result)
 
     def test_get_prep_value(self):
         field = LinkField()
-        value = {'url': '/','title': 'title',}
+        value = {'url': '/', 'title': 'title'}
         result = field.get_prep_value(value)
         expected_result = json.dumps(value)
         self.assertEqual(result, expected_result)

@@ -1,4 +1,5 @@
 import json
+
 import six
 
 from django.template.loader import render_to_string
@@ -28,7 +29,7 @@ class AdminLinkChooser(AdminChooser):
                 url = value.get('url', '')
                 title = value.get('title', '')
             else:
-                string_value= ""
+                string_value = ""
 
         original_field_html = super(AdminLinkChooser, self).render_html(name, string_value, attrs)
         return render_to_string("wagtailadmin/widgets/link_chooser.html", {
