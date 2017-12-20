@@ -4,12 +4,18 @@ python:
   - "2.7"
   - "3.6"
 
+env:
+  - WAGTAIL_VERSION=1.12.2
+  - WAGTAIL_VERSION=1.11.2
+  - WAGTAIL_VERSION=1.10.1
+
 cache: pip
 
 sudo: false
 
 install:
   - pip install -e .
+  - pip install -q wagtail==$WAGTAIL_VERSION
 
 script:
   - ./runtests.py
