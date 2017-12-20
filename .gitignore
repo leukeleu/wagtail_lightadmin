@@ -1,3 +1,4 @@
 wagtailfontawesome.egg-info/
 dist/
 *.pyc
+.coverage*
