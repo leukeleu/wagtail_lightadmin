@@ -34,13 +34,14 @@ def editor_js_hallo():
     import wagtail
     _, version, _, = wagtail.__version__.split('.')
 
-    if version < 12:
+    if int(version) < 12:
         # Use our custom hallo-bootstrap
-        return format_html(
-            """
-                <script type="text/javascript" src="{0}"></script>
-            """,
-            static('js/wagtailadmin/lighter-hallo-bootstrap.js')
-        )
+        js = static('js/wagtailadmin/lighter-hallo-bootstrap.js')
     else:
-        return ''
+        js = static('wagtailadmin/js/hallo-bootstrap.js')
+    return format_html(
+        """
+            <script type="text/javascript" src="{0}"></script>
+        """,
+        js
+    )
