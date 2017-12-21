@@ -29,19 +29,18 @@ def editor_js():
 @hooks.register('insert_editor_js')
 def editor_js_hallo():
     """
-    We need an extra JS file for Wagtail<1.12
-    (before HalloRichTextArea accepted features in its constructor)
+    We need an extra JS file for Wagtail<1.12.x
     """
-    editor_settings = getattr(settings, 'WAGTAILADMIN_RICH_TEXT_EDITORS')
+    import wagtail
+    _, version, _, = wagtail.__version__.split('.')
 
-    editor = editor_settings['default']
-
-    cls = import_string(editor['WIDGET'])
-
-    if getattr(cls, 'accepts_features', False):
+    if version < 12:
+        # Use our custom hallo-bootstrap
         return format_html(
             """
                 <script type="text/javascript" src="{0}"></script>
             """,
-            static('js/wagtailadmin/lighter-hallo-bootstrap.js'),
+            static('js/wagtailadmin/lighter-hallo-bootstrap.js')
         )
+    else:
+        return ''
