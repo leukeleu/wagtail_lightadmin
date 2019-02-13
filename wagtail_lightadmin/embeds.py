@@ -102,7 +102,7 @@ class CustomVimeoEmbedFinder(BaseVideoEmbedFinder):
         return 'https://vimeo.com/api/oembed.json?url='
 
     def get_headers(self):
-        return {'Referer': getattr(settings, 'WAGTAIL_VIDEO_REFERER', False)} if settings.WAGTAIL_VIDEO_REFERER else {}
+        return {'Referer': settings.WAGTAIL_VIDEO_REFERER} if getattr(settings, 'WAGTAIL_VIDEO_REFERER', False) else {}
 
     def get_html(self, json_response, image):
         return_html = BeautifulSoup(json_response['html'], 'html5lib')
