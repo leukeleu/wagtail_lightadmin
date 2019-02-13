@@ -20,7 +20,7 @@
             <h2>{{ provider }} privacy waarschuwing</h2>
             <p>Deze video wordt gehost door {{ provider }}. Als je doorgaat wordt er een tracking cookie in je browser geplaatst.</p>
             <input type="checkbox" id="{{ url|slugify }}_remember_decision" name="remember_decision">&nbsp;
-            <label for="{{ url|slugify }}_remember_decision">Onthoud deze beslissing voor andere {{ provider }} video's op smd.nu</label>
+            <label for="{{ url|slugify }}_remember_decision">Onthoud deze beslissing voor andere {{ provider }} video's</label>
             <button class="submit" data-provider="{{ provider|slugify }}" data-video="{{ url|slugify }}">Akkoord</button>
         </div>
     </div>
