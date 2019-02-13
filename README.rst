@@ -29,13 +29,46 @@ The "submit for moderation" is hidden (it's mostly confusing for the type of cli
 Provides a LinkBlock
 --------------------
 
-It had the same UI as when you insrt a link in a RichText but has the advantage of being avialable out of it.
+It has the same UI as when you insert a link in a RichText but has the advantage of being available out of it.
 
 In case you are using this block to replace a PageChooserBlock you can also use the pagechooser_fallback template tag.
 The PageChooserBlock initially only saves the pk of the page you want to link to. This templatetag gets the corresponding
 page and extracts the URL and the pagetitle from it to try and display what you would expect.
 A similar logic is used to try and keep the page the editor initially picked on the admin side.
 
+GDPR compliant videos
+---------------------
+
+This uses the embed finder feature from wagtail>=1.12.
+For vimeo and youtube videos it will load the no tracking version of the video.
+For other services, it provides a banner asking you for consent. If consent is not given, the video is not loaded and no cookie is placed.
+The consent is stored using the local storage of the browser.
+
+Extra JS and CSS are needed for the video banner to work properly (if you need support for other providers than vimeo and youtube). You should probably add them to your `base.html` or the relevant page template if you know which page type might contain videos.
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/video_banner.css' %}">
+    <script type="text/javascript" src="{% static 'js/video_banner.js' %}"></script>
+
+You will also need to specify that you want to use the embedfinders from this project in your settings file.
+
+    WAGTAILEMBEDS_FINDERS = [
+        {
+            'class': 'wagtail_lightadmin.embeds.CustomVimeoEmbedFinder',
+            'provider': [vimeo]
+        },
+        {
+            'class': 'wagtail_lightadmin.embeds.CustomYouTubeEmbedFinder',
+            'provider': [youtube]
+        },
+        {
+            'class': 'wagtail_lightadmin.embeds.CustomDailymotionEmbedFinder',
+            'provider': [dailymotion]
+        },
+    ]
+
+TODO:
+  - the list of providers in the JS needs to be infered from the `WAGTAILEMBEDS_FINDERS` setting
+  - there probably should be new tests for the embedfinder part
 
 Install & setup
 ===============

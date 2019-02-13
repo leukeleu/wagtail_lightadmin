@@ -1,0 +1,123 @@
+.responsive-object > * {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.responsive-object .hide.hide {
+  display: none;
+}
+
+.video-container .embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.video-container .overlay-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.video-container .overlay-wrapper .overlay {
+  max-width: 34.375rem;
+  background-color: rgba(0, 0, 0, .5);
+  color: white;
+  padding: 1.25rem;
+  border-radius: 0.1875rem;
+}
+
+.video-container .overlay-wrapper .overlay p,
+.video-container .overlay-wrapper .overlay h2 {
+  color: white;
+}
+
+.video-container .overlay-wrapper .overlay h2 {
+  margin-top: 0;
+}
+
+.video-container .overlay-wrapper .overlay .submit {
+  background-color: #FF1975;
+  padding: 0.625rem;
+  width: 9.75rem;
+  box-sizing: border-box;
+  border-radius: 0.1875rem;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  border-width: 0;
+  margin-top: 0.9375rem;
+}
+
+.video-container .overlay-wrapper .overlay .submit:hover {
+  background-color: #EE126C;
+}
+
+.video-container .backdrop {
+  width: 100%;
+  height: auto;
+  opacity: 1;
+}
+
+.video-container .backdrop.hide {
+  -webkit-transition: opacity 5s;
+  transition: opacity 5s;/* give time for the iframe to load */
+  opacity: 0;
+}
+
+.video-container .play-button-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.video-container .play-button {
+  background-color: rgba(0, 0, 0, .45);
+  width: 1.5625rem;
+  height: 1.5625rem;
+  border-radius: 50%;
+  border: 0.03125rem solid white;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 30%;
+  text-indent: -624.9375rem;
+  -webkit-transform: scale(4);
+          transform: scale(4);
+  cursor: pointer;
+}
+
+.video-container[data-allowed=true] .play-button-wrapper,
+.video-container[data-allowed=true] .overlay-wrapper,
+.video-container[data-allowed=true] img {
+  z-index: -1;
+}
