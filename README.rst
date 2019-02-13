@@ -69,6 +69,7 @@ You will also need to specify that you want to use the embedfinders from this pr
 TODO:
   - the list of providers in the JS needs to be infered from the `WAGTAILEMBEDS_FINDERS` setting
   - there probably should be new tests for the embedfinder part
+  - maybe make the template translatable?
 
 Install & setup
 ===============
