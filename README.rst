@@ -44,12 +44,12 @@ For vimeo and youtube videos it will load the no tracking version of the video.
 For other services, it provides a banner asking you for consent. If consent is not given, the video is not loaded and no cookie is placed.
 The consent is stored using the local storage of the browser.
 
-Extra JS and CSS are needed for the video banner to work properly (if you need support for other providers than vimeo and youtube). You should probably add them to your `base.html` or the relevant page template if you know which page type might contain videos.
+Extra JS and CSS are needed for the video banner to work properly (if you need support for other providers than vimeo and youtube). You should probably add them to your `base.html` or the relevant page template if you know which page type might contain videos::
 
     <link rel="stylesheet" type="text/css" href="{% static 'css/video_banner.css' %}">
     <script type="text/javascript" src="{% static 'js/video_banner.js' %}"></script>
 
-You will also need to specify that you want to use the embedfinders from this project in your settings file.
+You will also need to specify that you want to use the embedfinders from this project in your settings file::
 
     WAGTAILEMBEDS_FINDERS = [
         {
@@ -110,6 +110,6 @@ Tell Wagtail to use the light rich text widget in your settings_default.py::
         },
     }
 
-Make sure django knows about the new static files
+Make sure django knows about the new static files::
 
-`manage.py collectstatic --no-input`
+    manage.py collectstatic --no-input
