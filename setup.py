@@ -4,7 +4,7 @@ from setuptools import find_packages, setup
 
 setup(
     name='wagtail_lightadmin',
-    version='0.9',
+    version='0.10',
     description='A lighter admin for wagtail',
     long_description=io.open('README.rst', encoding='utf-8').read(),
     keywords=['wagtail', 'admin', 'light'],
@@ -22,7 +22,7 @@ setup(
     ],
     license='MIT',
     install_requires=[
-        'wagtail',
+        'wagtail>=2.0',
     ],
     include_package_data=True,
     zip_safe=False

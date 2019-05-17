@@ -46,18 +46,6 @@ Add `wagtail_lightadmin` to your installed apps.
 
 Tell Wagtail to use the light rich text widget in your settings_default.py::
 
-    # For Wagtail < 1.12
-    WAGTAILADMIN_RICH_TEXT_EDITORS = {
-        # Original setting
-        # 'default': {
-        #     'WIDGET': 'wagtail.wagtailadmin.rich_text.HalloRichTextArea'
-        # },
-        'default': {
-            'WIDGET': 'wagtail_lightadmin.rich_text.LighterRichTextArea'
-        },
-    }
-
-    # For Wagtail >= 1.12
     WAGTAILADMIN_RICH_TEXT_EDITORS = {
         'default': {
             'WIDGET': 'wagtail.wagtailadmin.rich_text.HalloRichTextArea',
