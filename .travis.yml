@@ -17,7 +17,7 @@ sudo: false
 
 install:
   - pip install -e .
-  - pip install -q wagtail==$WAGTAIL_VERSION
+  - pip install wagtail==$WAGTAIL_VERSION
 
 script:
   - ./runtests.py
