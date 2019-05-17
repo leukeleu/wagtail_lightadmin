@@ -1,13 +1,15 @@
 language: python
 
 python:
-  - "2.7"
   - "3.6"
 
 env:
-  - WAGTAIL_VERSION=1.12.2
-  - WAGTAIL_VERSION=1.11.1
-  - WAGTAIL_VERSION=1.10.1
+  - WAGTAIL_VERSION=2.0.2
+  - WAGTAIL_VERSION=2.1.3
+  - WAGTAIL_VERSION=2.2.2
+  - WAGTAIL_VERSION=2.3
+  - WAGTAIL_VERSION=2.4
+  - WAGTAIL_VERSION=2.5.1
 
 cache: pip
 
