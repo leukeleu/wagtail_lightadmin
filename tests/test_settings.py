@@ -1,17 +1,17 @@
 SECRET_KEY = 'fake-key'
 
 INSTALLED_APPS = [
-    'wagtail.wagtailforms',
-    'wagtail.wagtailredirects',
-    'wagtail.wagtailembeds',
-    'wagtail.wagtailsites',
-    'wagtail.wagtailusers',
-    'wagtail.wagtailsnippets',
-    'wagtail.wagtaildocs',
-    'wagtail.wagtailimages',
-    'wagtail.wagtailsearch',
-    'wagtail.wagtailadmin',
-    'wagtail.wagtailcore',
+    'wagtail.forms',
+    'wagtail.redirects',
+    'wagtail.embeds',
+    'wagtail.sites',
+    'wagtail.users',
+    'wagtail.snippets',
+    'wagtail.documents',
+    'wagtail.images',
+    'wagtail.search',
+    'wagtail.admin',
+    'wagtail.core',
     'wagtail.contrib.modeladmin',
 
     'modelcluster',

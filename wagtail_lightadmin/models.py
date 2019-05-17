@@ -8,8 +8,8 @@ import six
 from django import forms
 from django.db import models
 
-from wagtail.wagtailcore import blocks
-from wagtail.wagtailcore.models import Page
+from wagtail.core import blocks
+from wagtail.core.models import Page
 
 from . import widgets
 

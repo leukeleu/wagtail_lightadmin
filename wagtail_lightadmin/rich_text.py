@@ -1,7 +1,7 @@
 from django.contrib.staticfiles.templatetags.staticfiles import static
 from django.forms import Media
 
-from wagtail.wagtailadmin.rich_text import HalloRichTextArea
+from wagtail.admin.rich_text import HalloRichTextArea
 
 
 class LighterRichTextArea(HalloRichTextArea):

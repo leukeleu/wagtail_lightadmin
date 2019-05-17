@@ -5,7 +5,7 @@ from django.contrib.staticfiles.templatetags.staticfiles import static
 from django.utils.html import format_html
 from django.utils.module_loading import import_string
 
-from wagtail.wagtailcore import hooks
+from wagtail.core import hooks
 
 
 @hooks.register('insert_editor_css')

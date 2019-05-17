@@ -2,8 +2,8 @@ import json
 
 from django.test import TestCase
 
-from wagtail.wagtailcore import blocks
-from wagtail.wagtailcore.models import Page
+from wagtail.core import blocks
+from wagtail.core.models import Page
 
 from wagtail_lightadmin import widgets
 from wagtail_lightadmin.models import LinkBlock, LinkField
