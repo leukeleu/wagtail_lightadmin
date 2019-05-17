@@ -1,8 +1,8 @@
 SECRET_KEY = 'fake-key'
 
 INSTALLED_APPS = [
-    'wagtail.forms',
-    'wagtail.redirects',
+    'wagtail.contrib.forms',
+    'wagtail.contrib.redirects',
     'wagtail.embeds',
     'wagtail.sites',
     'wagtail.users',
