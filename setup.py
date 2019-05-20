@@ -4,9 +4,10 @@ from setuptools import find_packages, setup
 
 setup(
     name='wagtail_lightadmin',
-    version='0.12',
+    version='0.12.1',
     description='A lighter admin for wagtail',
     long_description=io.open('README.rst', encoding='utf-8').read(),
+    long_description_content_type='text/x-rst',
     keywords=['wagtail', 'admin', 'light'],
     author='Christine Ho (Leukeleu)',
     author_email='cho@leukeleu.nl',
