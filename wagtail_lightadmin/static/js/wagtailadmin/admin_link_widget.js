@@ -23,6 +23,7 @@ function createLinkChooser(id, url, title) {
         ModalWorkflow({
             url: initialUrl,
             urlParams: urlParams,
+            onload: PAGE_CHOOSER_MODAL_ONLOAD_HANDLERS,
             responses: {
                 pageChosen: function(pageData) {
                     input.val(JSON.stringify(pageData));
