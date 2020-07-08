@@ -3,7 +3,7 @@ import json
 import six
 
 from django.template.loader import render_to_string
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from wagtail.admin.widgets import AdminChooser
 
