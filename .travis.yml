@@ -11,11 +11,13 @@ env:
   - WAGTAIL_VERSION=2.2.2
   - WAGTAIL_VERSION=2.3
   - WAGTAIL_VERSION=2.4
-  - WAGTAIL_VERSION=2.5.1
+  - WAGTAIL_VERSION=2.5.2
+  - WAGTAIL_VERSION=2.6.3
+  - WAGTAIL_VERSION=2.7.3
+  - WAGTAIL_VERSION=2.8.2
+  - WAGTAIL_VERSION=2.9.2
 
 cache: pip
-
-sudo: false
 
 install:
   - pip install -e .
