@@ -34,8 +34,8 @@ Provides a LinkBlock
 It has the same UI as when you insert a link in a RichText but has the advantage of being avialable out of it.
 
 In case you are using this block to replace a PageChooserBlock you can also use the pagechooser_fallback template tag.
-The PageChooserBlock initially only saves the pk of the page you want to link to. This templatetag gets the corresponding
-page and extracts the URL and the pagetitle from it to try and display what you would expect.
+The PageChooserBlock initially only saves the pk of the page you want to link to. This template tag gets the corresponding
+page and extracts the URL and the page title from it to try and display what you would expect.
 A similar logic is used to try and keep the page the editor initially picked on the admin side.
 
 
