@@ -6,20 +6,16 @@ python:
   - "3.6"
 
 env:
-  - WAGTAIL_VERSION=2.0.2
-  - WAGTAIL_VERSION=2.1.3
-  - WAGTAIL_VERSION=2.2.2
-  - WAGTAIL_VERSION=2.3
-  - WAGTAIL_VERSION=2.4
-  - WAGTAIL_VERSION=2.5.1
+  - WAGTAIL_VERSION='>=2.3,<2.4'
+  - WAGTAIL_VERSION='>=2.7,<2.8'
+  - WAGTAIL_VERSION='>=2.8,<2.9'
+  - WAGTAIL_VERSION='>=2.9,<2.10'
 
 cache: pip
 
-sudo: false
-
 install:
   - pip install -e .
-  - pip install wagtail==$WAGTAIL_VERSION
+  - pip install wagtail$WAGTAIL_VERSION
 
 script:
   - ./runtests.py
