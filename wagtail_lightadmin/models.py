@@ -82,7 +82,7 @@ class LinkField(models.CharField):
         defaults.update(kwargs)
         return super(LinkField, self).formfield(**defaults)
 
-    def from_db_value(self, value, expression, connection, context):
+    def from_db_value(self, value, expression, connection):
         return self.to_python(value)
 
     def to_python(self, value):
