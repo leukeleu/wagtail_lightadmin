@@ -4,7 +4,7 @@ from setuptools import find_packages, setup
 
 setup(
     name='wagtail_lightadmin',
-    version='0.13',
+    version='0.13.1',
     description='A lighter admin for wagtail',
     long_description=io.open('README.rst', encoding='utf-8').read(),
     long_description_content_type='text/x-rst',
