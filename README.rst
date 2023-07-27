@@ -9,6 +9,11 @@ Custom admin for wagtail
 .. image:: http://img.shields.io/travis/leukeleu/wagtail_lightadmin/master.svg
    :target: https://travis-ci.org/leukeleu/wagtail_lightadmin
 
+Archived
+========
+
+    ****This project is no longer maintained****
+
 Features
 ========
 
